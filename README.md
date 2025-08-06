@@ -1,104 +1,159 @@
-# ðŸ“Š AnÃ¡lise Preditiva de Rotatividade de Clientes
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Análise Preditiva de Rotatividade de Clientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3, h4 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #eee;
+      padding: 3px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #ddd;
+    }
+    .badge {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
-## ðŸš€ VisÃ£o Geral
-Este projeto implementa uma soluÃ§Ã£o completa de machine learning para previsÃ£o de rotatividade de clientes (churn) utilizando dados histÃ³ricos. O sistema identifica clientes com risco de abandono e fornece insights acionÃ¡veis para estratÃ©gias de retenÃ§Ã£o.
+  <h1>📚 Análise Preditiva de Rotatividade de Clientes</h1>
 
+  <h2>🚀 Visão Geral</h2>
+  <p>Este projeto implementa uma solução completa de <em>machine learning</em> para previsão de rotatividade de clientes (churn) utilizando dados históricos. O sistema identifica clientes com risco de abandono e fornece insights acionáveis para estratégias de retenção.</p>
 
-## ðŸ”§ Tecnologias Utilizadas
-**Linguagens e Frameworks:**
-- ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-- ![Scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
-- ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-- ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+  <h2>🔧 Tecnologias Utilizadas</h2>
+  <h3>Linguagens e Frameworks:</h3>
+  <span class="badge">Python</span>
+  <span class="badge">Scikit-learn</span>
+  <span class="badge">Pandas</span>
+  <span class="badge">Matplotlib</span>
 
-**Ferramentas:**
-- ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
-- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-- ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+  <h3>Ferramentas:</h3>
+  <span class="badge">Jupyter Notebook</span>
+  <span class="badge">Git</span>
+  <span class="badge">Markdown</span>
 
-**TÃ©cnicas AvanÃ§adas:**
-- SMOTE para balanceamento de classes
-- OtimizaÃ§Ã£o de hiperparÃ¢metros com GridSearchCV
-- ValidaÃ§Ã£o cruzada (5 folds)
-- MÃ©tricas de avaliaÃ§Ã£o multicritÃ©rio
+  <h3>Técnicas Avançadas:</h3>
+  <ul>
+    <li>SMOTE para balanceamento de classes</li>
+    <li>Otimização de hiperparâmetros com GridSearchCV</li>
+    <li>Validação cruzada (5 folds)</li>
+    <li>Métricas de avaliação multicritério</li>
+  </ul>
 
-## ðŸ“‚ Estrutura do Projeto
-```bash
-â”œâ”€â”€ dados/                   # Pasta com conjuntos de dados
-â”‚   â””â”€â”€ dados_df.csv         # Dataset principal
-â”œâ”€â”€ notebooks/               # Jupyter notebooks
-â”‚   â””â”€â”€ Challenge_TeleconX_Parte2.ipynb  # Notebook principal
-â”œâ”€â”€ relatorios/              # RelatÃ³rios e visualizaÃ§Ãµes
-â”‚   â”œâ”€â”€ metricas_modelos.png # Comparativo de mÃ©tricas
-â”‚   â””â”€â”€ curva_roc.png        # Curva ROC comparativa
-â”œâ”€â”€ README.md                # DocumentaÃ§Ã£o do projeto
-â””â”€â”€ requirements.txt         # DependÃªncias do projeto
-```
+  <h2>📂 Estrutura do Projeto</h2>
+  <pre>
+├── dados/
+│   └── dados_df.csv
+├── notebooks/
+│   └── Challenge_TeleconX_Parte2.ipynb
+├── relatorios/
+│   ├── metricas_modelos.png
+│   └── curva_roc.png
+├── README.md
+└── requirements.txt
+  </pre>
 
-## âš™ï¸ ImplementaÃ§Ã£o
+  <h2>⚙️ Implementação</h2>
+  <h3>🔧 Fluxo de Processamento</h3>
+  <p><em>Ver gráfico de fluxo no README.md original com Mermaid</em></p>
 
-### ðŸ”„ Fluxo de Processamento
-```mermaid
-graph TD
-    A[Carregamento de Dados] --> B[AnÃ¡lise ExploratÃ³ria]
-    B --> C[PrÃ©-processamento]
-    C --> D[DivisÃ£o Treino/Teste]
-    D --> E[Balanceamento SMOTE]
-    E --> F[Modelagem]
-    F --> G[OtimizaÃ§Ã£o]
-    G --> H[AvaliaÃ§Ã£o]
-    H --> I[Deploy]
-```
+  <h3>🔍 Componentes Chave</h3>
+  <h4>1. Pré-processamento Inteligente</h4>
+  <ul>
+    <li>Codificação One-Hot</li>
+    <li>Normalização</li>
+    <li>Tratamento de nulos</li>
+  </ul>
 
-### ðŸ”‘ Componentes Chave
-1. **PrÃ©-processamento Inteligente**
-   - CodificaÃ§Ã£o de variÃ¡veis categÃ³ricas (One-Hot Encoding)
-   - NormalizaÃ§Ã£o de features numÃ©ricas
-   - Tratamento de dados ausentes
+  <h4>2. Balanceamento com SMOTE</h4>
+  <pre><code>smote = SMOTE(random_state=42)
+X_train_res, y_train_res = smote.fit_resample(X_train, y_train)</code></pre>
 
-2. **Balanceamento EstratÃ©gico**
-   ```python
-   smote = SMOTE(random_state=42)
-   X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
-   ```
+  <h4>3. Otimização com GridSearch</h4>
+  <pre><code>grid_search = GridSearchCV(
+    pipeline,
+    param_grid=params,
+    cv=5,
+    scoring='roc_auc',
+    n_jobs=-1,
+    verbose=1
+)</code></pre>
 
-3. **OtimizaÃ§Ã£o Rigorosa**
-   ```python
-   grid_search = GridSearchCV(
-       pipeline,
-       param_grid=params,
-       cv=5,
-       scoring='roc_auc',
-       n_jobs=-1,
-       verbose=1
-   )
-   ```
+  <h4>4. Avaliação</h4>
+  <pre><code>print(classification_report(y_test, y_pred))
+plot_confusion_matrix(model, X_test, y_test)</code></pre>
 
-4. **AvaliaÃ§Ã£o Abrangente**
-   ```python
-   print(classification_report(y_test, y_pred))
-   plot_confusion_matrix(model, X_test, y_test)
-   ```
+  <h2>📈 Resultados e Conclusões</h2>
+  <h3>📊 Comparação de Modelos</h3>
+  <table>
+    <tr>
+      <th>Modelo</th>
+      <th>AUC Score</th>
+      <th>Precisão</th>
+      <th>Recall</th>
+      <th>F1-Score</th>
+    </tr>
+    <tr>
+      <td>Random Forest</td>
+      <td>0.8387</td>
+      <td>0.55</td>
+      <td>0.69</td>
+      <td>0.61</td>
+    </tr>
+    <tr>
+      <td>Gradient Boosting</td>
+      <td>0.8438</td>
+      <td>0.60</td>
+      <td>0.72</td>
+      <td>0.65</td>
+    </tr>
+  </table>
 
-## ðŸ“ˆ Resultados e ConclusÃµes
+  <h3>🔎 Insights</h3>
+  <ul>
+    <li>🎯 Gradient Boosting teve o melhor desempenho geral</li>
+    <li>⚖️ SMOTE ajudou a melhorar o equilíbrio</li>
+    <li>📎 Classe majoritária tem maior acurácia</li>
+    <li>📌 Features mais preditivas: <code>Charges.Total</code> e <code>Estágio</code></li>
+  </ul>
 
-### ComparaÃ§Ã£o de Modelos
-| Modelo           | AUC Score | PrecisÃ£o (Churn) | Recall (Churn) | F1-Score (Churn) |
-|------------------|-----------|------------------|----------------|------------------|
-| Random Forest    | 0.8387    | 0.55             | 0.69           | 0.61             |
-| Gradient Boosting| 0.8438    | 0.60             | 0.72           | 0.65             |
-
-### Insights Principais
-1. ðŸŽ¯ **Gradient Boosting** apresentou melhor desempenho geral (AUC = 0.8438)
-2. âš–ï¸ EstratÃ©gia de SMOTE eficaz para lidar com desbalanceamento
-3. ðŸ“‰ Modelos apresentam melhor performance na classe majoritÃ¡ria
-4. â±ï¸ Features como `Charges.Total` e `EstÃ¡gio` sÃ£o altamente preditivas
-
-## ðŸš€ RecomendaÃ§Ãµes para ProduÃ§Ã£o
-
-### ImplementaÃ§Ã£o
-```python
-# Exemplo de API Flask para deploy
+  <h2>🚀 Deploy e Estratégias</h2>
+  <h3>API Flask (Exemplo)</h3>
+  <pre><code>
 from flask import Flask, request, jsonify
 import joblib
 
@@ -113,44 +168,35 @@ def predict():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-```
+  </code></pre>
 
-### EstratÃ©gias de AÃ§Ã£o
-1. **SegmentaÃ§Ã£o de Clientes**
-   - Priorizar clientes com probabilidade >70% de churn
-   - Oferecer planos personalizados
+  <h3>🎯 Estratégias de Ação</h3>
+  <ul>
+    <li>Segmentar clientes com risco > 70%</li>
+    <li>Recalibrar modelo trimestralmente</li>
+    <li>Enviar alertas ao CRM com prioridade</li>
+    <li>Métricas: reduzir churn em 15%, aumentar receita em 10%</li>
+  </ul>
 
-2. **Monitoramento ContÃ­nuo**
-   - Recalibrar modelos trimestralmente
-   - Acompanhar mudanÃ§as no perfil dos clientes
+  <h2>👩‍💻 Autora</h2>
+  <p><strong>Bruna Rafaela Gidaro</strong></p>
+  <p>
 
-3. **IntegraÃ§Ã£o com CRM**
-   ```mermaid
-   sequenceDiagram
-       Sistema ML->>CRM: Alertas de risco de churn
-       CRM->>Agentes: NotificaÃ§Ãµes prioritÃ¡rias
-       Agentes->>Cliente: Ofertas personalizadas
-   ```
+  <h3>Principais Contribuições:</h3>
+  <ul>
+    <li>🔍 Análise exploratória</li>
+    <li>🤖 Desenvolvimento do pipeline</li>
+    <li>📊 Visualização</li>
+    <li>🚀 Implementação</li>
+  </ul>
 
-4. **KPI de Sucesso**
-   - ReduÃ§Ã£o de 15% na taxa de churn em 6 meses
-   - Aumento de 10% na receita por cliente
+  <h3>Próximos Passos:</h3>
+  <ul>
+    <li>Dashboard de monitoramento</li>
+    <li>Alertas em tempo real</li>
+    <li>Testar Deep Learning</li>
+    <li>Previsão de Lifetime Value</li>
+  </ul>
 
-## ðŸ‘¨â€ðŸ’» Autor
-**Jefferson Ferreira**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jefferson-ferreira-ds/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/francaferreira/)
-
-**Principais ContribuiÃ§Ãµes:**
-- ðŸ” AnÃ¡lise exploratÃ³ria de dados
-- ðŸ¤– Desenvolvimento da pipeline de ML
-- ðŸ“Š VisualizaÃ§Ã£o de resultados
-- ðŸš€ ImplementaÃ§Ã£o da soluÃ§Ã£o
-
-**PrÃ³ximos Passos:**
-1. Desenvolver dashboard de monitoramento
-2. Implementar sistema de alertas em tempo real
-3. Testar tÃ©cnicas de deep learning
-4. Expandir para previsÃ£o de lifetime value
-
----
+</body>
+</html>
